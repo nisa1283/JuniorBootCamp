@@ -18,14 +18,15 @@ public class Program
         Console.WriteLine("Please enter the quantity:");
         decimal quantity = Convert.ToDecimal(Console.ReadLine());
 
-        Console.WriteLine("Please enter the total:");
-        decimal total = Convert.ToDecimal(Console.ReadLine());
+        Invoice invoice = new Invoice(customerName, productName, unitPrice, quantity, 0 );
+        InvoiceCalculator.CalculateTotal(invoice);
 
-        Invoice invoice = new Invoice(customerName, productName, unitPrice, quantity, total);
-        InvoiceService.CalculateTotal(invoice);
+        Console.WriteLine("Total: " + invoice.Total);
 
-        InvoiceService invoiceService = new InvoiceService();
-        invoiceService.PrintInvoices(invoice);
-        invoiceService.SaveToFile(invoice);
+        InvoicePrinter invoicePrinter = new InvoicePrinter();
+        invoicePrinter.PrintInvoices(invoice);
+
+        InvoiceFileSaver invoiceFileSaver = new InvoiceFileSaver();
+        invoiceFileSaver.SaveToFile(invoice);
     }
 }
