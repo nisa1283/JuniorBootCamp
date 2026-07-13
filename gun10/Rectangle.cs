@@ -1,6 +1,6 @@
 ﻿namespace gun10
 {
-    public class Rectangle
+    public class Rectangle :IShape
     {
         public virtual int Width { get; set; }
         public virtual int Height { get; set; }

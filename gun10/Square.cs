@@ -1,29 +1,16 @@
 ﻿namespace gun10
 {
-    public class Square : Rectangle
+    public class Square : IShape
     {
-        public Square(int side) : base(side, side)
-        {
-        }
+        public int Side { get; set; }
 
-        public override int Width
+        public Square (int side)
         {
-            set
-            {
-                base.Width = value;
-                base.Height = value;
-            }
-            get => base.Width;
+            Side = side;
         }
-
-        public override int Height
+        public int Area()
         {
-            set
-            {
-                base.Width = value;
-                base.Height = value;
-            }
-            get => base.Height;
+            return Side * Side;
         }
     }
 }

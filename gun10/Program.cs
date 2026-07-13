@@ -1,8 +1,14 @@
 ﻿using gun10;
 
-Rectangle rect = new Square(5);
+IShape rect = new Rectangle(5, 10);
+IShape square = new Square(5);
 
-rect.Width = 5;
-rect.Height = 10;
+List<IShape> shapes = new List<IShape>();
 
-Console.WriteLine(rect.Area());
+shapes.Add(rect);
+shapes.Add(square);
+
+foreach (var shape in shapes)
+{
+    Console.WriteLine(shape.Area());
+}
