@@ -1,14 +1,14 @@
 ﻿namespace gun5
 {
-    class Bird : Animal ,IFlyable
+    class Fish : Animal, ISwimmable
     {
-        public Bird(string name, int age) : base(name, age)
+        public Fish(string name, int age) : base(name, age)
         {
         }
 
         public override void MakeSound()
         {
-            Console.WriteLine(Name + " cıvıldar");
+            Console.WriteLine(Name + " blub blub");
         }
         public override void Eat()
         {
@@ -18,9 +18,9 @@
         {
             Console.WriteLine(Name + " uyur");
         }
-        public void Fly()
+        public void Swim()
         {
-            Console.WriteLine(Name + " uçar");
+            Console.WriteLine(Name + " yüzer");
         }
     }
 }

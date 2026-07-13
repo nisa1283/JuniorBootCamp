@@ -18,7 +18,7 @@
         public void ShowAnimals()
         {
             foreach (var animal in animals)
-            { 
+            {
                 Console.WriteLine("--------------------------");
                 Console.WriteLine("Hayvan Adı: " + animal.Name + ", Yaşı: " + animal.Age);
                 animal.MakeSound();
@@ -29,7 +29,8 @@
             }
         }
 
-        public Animal? FindAnimal(string name) { 
+        public Animal? FindAnimal(string name)
+        {
             foreach (var animal in animals)
             {
                 if (animal.Name == name)
@@ -40,7 +41,8 @@
             return null;
         }
 
-        public int AnimalCount() { 
+        public int AnimalCount()
+        {
             return animals.Count;
         }
 
@@ -48,6 +50,27 @@
         {
             return FindAnimal(name) != null;
         }
-    }
 
+        public void ShowFlyingAnimals()
+        {
+            foreach (var animal in animals)
+            {
+                if (animal is IFlyable flyable)
+                {
+                    flyable.Fly();
+                }
+            }
+        }
+
+        public void ShowSwimmingAnimals()
+        {
+            foreach (var animal in animals)
+            {
+                if (animal is ISwimmable swimmable)
+                {
+                    swimmable.Swim();
+                }
+            }
+        }
+    }
 }

@@ -9,6 +9,7 @@
             zoo.AddAnimal(new Dog("Karabaş", 5));
             zoo.AddAnimal(new Cat("Mimi", 3));
             zoo.AddAnimal(new Bird("Sarı", 2));
+            zoo.AddAnimal(new Fish("Nemo", 1));
 
             zoo.ShowAnimals();
             zoo.FindAnimal("Mimi")?.MakeSound();
